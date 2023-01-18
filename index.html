@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Inheritance</title>
+    <link rel="stylesheet" href="http://www.w3cschools.com/lib/w3.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <div class="a-icons">
+          <a href="#"><i class="fa-brands fa-square-js fa-4x"></i></a>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1>Inheritance in JavaScript</h1>
+        <div class="div1"></div>
+        <p>
+          Inheritance in JavaScript maintains an IS-A relationship. Then the
+          keyword ‘extends’ is used in class expression or declaration. It is
+          also used to acquire all the functionalities of the inbuilt object as
+          well as custom classes. As stated below JavaScript is object-oriented
+          but it is not like Java. It is a prototype base. Due to this, there
+          are no classes. There are only objects. Hence for inheritance in
+          JavaScript, we can use Prototypal or Pseudo classical inheritance. We
+          will explain them in brief below.
+        </p>
+        <!-- <a href="#" class="hero-btn">Visit us to know more</a> -->
+      </div>
+    </section>
+
+    <!-- music -->
+    <div class="music">
+      <h1>Types of inheritance in JavaScript</h1>
+      <p>
+        Inheritance in JavaScript is a very vast concept and there are many
+        methods to implement it. Mainly there are three types of inheritance in
+        JavaScript. They are, prototypal, pseudo classical, and functional. Now
+        let us look at each type of inheritance in JavaScript and understand
+        them properly.
+      </p>
+
+      <div class="row">
+        <div class="music-coloumn">
+          <img src="Images/program1.jpg" alt="" />
+          <div class="layer">
+            <h3>Prototypal Inheritance</h3>
+          </div>
+        </div>
+        <div class="music-coloumn">
+          <img src="Images/program2.jpg" alt="" />
+          <div class="layer">
+            <h3>Pseudo-classical Inheritance</h3>
+          </div>
+        </div>
+        <div class="music-coloumn">
+          <img src="Images/program3.jpg" alt="" />
+          <div class="layer">
+            <h3>Functional Inheritance</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- News -->
+    <section class="news">
+      <div class="row">
+        <div class="events-coloumn">
+          <h3>Prototypal Inheritance</h3>
+          <p>
+            This type of inheritance in JavaScript adds new properties and
+            methods to the existing object. Prototypal inheritance in JavaScript
+            makes use of prototype object that is object.prototype. It is a
+            method through which an object can inherit the properties as well as
+            the methods of another object. Initially, in order to get and set
+            the [[Prototype]] of the object we used Object.getPrototypeOf and
+            Object.setPrototypeOf. But now we can make use of __proto__.
+          </p>
+        </div>
+        <div class="events-coloumn">
+          <h3>Pseudo-classical Inheritance</h3>
+          <p>
+            This inheritance in JavaScript is very similar to the previous one,
+            prototypal inheritance. In Pseudo classical inheritance, it emulates
+            the classical inheritance by using prototypal inheritance. But if
+            you are programming with ES6, then this type of inheritance in
+            JavaScript is not supported. As one can use conventional classes
+            that are using the keyword class. In Pseudo-classical inheritance,
+            we try to create a class with a method that is intended to be called
+            using the new keyword.
+          </p>
+        </div>
+        <div class="events-coloumn">
+          <h3>Functional Inheritance</h3>
+          <p>
+            From the name of the inheritance, you understand that this type of
+            inheritance in JavaScript makes use of functions. Functional
+            Inheritance uses an augmenting function to the instance of the
+            object in order to inherit the features of that object.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Foooter -->
+    <footer class="footer">
+      <div style="display: flex; justify-content: center">
+        <button class="btn" type="button" onclick="myfunction()">
+          Click Here !!!
+        </button>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <p id="demo"></p>
+      </div>
+    </footer>
+
+    <script>
+      function myfunction() {
+        const Marvel1 = new Marvel(
+          prompt("Enter Your Name"),
+          prompt("Enter your SuperHero")
+        );
+        const b = Marvel1.introduce();
+      }
+      class Player {
+        constructor(name, type) {
+          this.name = name;
+          this.type = type;
+        }
+
+        introduce() {
+          document.getElementById(
+            "demo"
+          ).innerHTML = `<h3> Hi I am ${this.name}, My Favorite SuperHero is ${this.type} </h3>`;
+        }
+      }
+
+      class Marvel extends Player {
+        constructor(name, type) {
+          super(name, type);
+        }
+
+        play() {
+          alert(`I am ${this.type}`);
+        }
+      }
+    </script>
+  </body>
+</html>
